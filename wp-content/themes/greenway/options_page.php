@@ -23,8 +23,8 @@ if( function_exists('acf_add_options_page') ) {
 	));
 	
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Reviews Settings',
-		'menu_title'	=> 'Reviews',
+		'page_title' 	=> 'Партнерская форма',
+		'menu_title'	=> 'Partner Form',
 		'parent_slug'	=> 'theme-general-settings',
 	));
 	

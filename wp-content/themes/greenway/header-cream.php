@@ -8,7 +8,7 @@
 </head>
 <body>
     
-    <header class="header">
+    <header class="header header_cream">
         <div class="container">
             <div class="header-wrapper">
                 <a href="<?php echo home_url() ?>" class="header__logo">
