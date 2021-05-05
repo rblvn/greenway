@@ -1,0 +1,15 @@
+$light-green: #D6E780;
+$brown: #3C3734;
+$light-black: rgba(#000000, 0.7);
+$dark-green: #344F28;
+$white: #F6F6F6;
+$light-pink: #FEE0E2;
+$pink: #FEE0E2;
+$light: #E5E5E5;
+$cream: #F9F7EE;
+
+@mixin d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
