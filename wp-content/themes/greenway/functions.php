@@ -37,7 +37,7 @@ function greenway_assets() {
 
 	// wp_enqueue_script('fancybox', get_template_directory_uri() . '/libs/fancybox/fancybox.min.js', false, null, true );
 	
-	// wp_enqueue_script('slick', get_template_directory_uri() . '/libs/slick/slick.min.js', false, null, true );
+	 wp_enqueue_script('slick', get_template_directory_uri() . '/assets/slick.css', false, null, true );
 	
 	// wp_enqueue_script('inputmask', get_template_directory_uri() . '/libs/inputmask/inputmask.min.js', false, null, true );
 	
@@ -151,9 +151,21 @@ class Header_Walker extends Walker_Nav_Menu {
         }
     }
 
-    function remove_core_updates(){
-        global $wp_version;return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
-        }
-        add_filter('pre_site_transient_update_core','remove_core_updates');
-        add_filter('pre_site_transient_update_plugins','remove_core_updates');
-        add_filter('pre_site_transient_update_themes','remove_core_updates');
+function remove_core_updates(){
+    global $wp_version;return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
+}
+add_filter('pre_site_transient_update_core','remove_core_updates');
+add_filter('pre_site_transient_update_plugins','remove_core_updates');
+add_filter('pre_site_transient_update_themes','remove_core_updates');
+
+//allow webp uploading
+add_filter( 'upload_mimes', 'my_myme_types', 1, 1 );
+function my_myme_types( $mime_types ) {
+  $mime_types['webp'] = 'image/webp';     // Adding .webp extension
+  
+//  unset( $mime_types['xls'] );  // Remove .xls extension
+//  unset( $mime_types['xlsx'] ); // Remove .xlsx extension
+  
+  return $mime_types;
+
+}
